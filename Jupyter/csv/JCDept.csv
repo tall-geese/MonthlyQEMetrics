@@ -1,0 +1,45 @@
+101,Tool Room
+102,Assembly
+103,Jigbore
+104,Grinding
+105,NC Machining
+106,NC Programming
+107,EDM Wire
+109,NC Lathe
+113,Quality Control
+114,Quality Assurance
+121,Steel Room
+122,Supervision
+124,Process Engineering
+125,Supply Chain
+126,Shipping & Receiving
+127,Maintenance
+170,G&A Marketing
+176,G&A Accounting / Personnel
+177,Johnson & Hoffman
+178,G&A Information Technologies
+179,Valley Precision
+180,G&A Manley Holdings
+181,Administration
+310,Swiss Machining
+311,Milling
+312,MillTurn
+313,Other Indirect
+314,EDM
+330,Deburring
+331,Finishing
+332,Passivation/Cleaning
+333,Anodize
+334,Laser
+335,Assembly
+336,Post Machining
+340,INSPECT
+341,QA
+350,SUPV
+360,ENG
+361,PRODCTL
+362,Programming
+380,Shipping and Receiving
+399,Maintenance
+800,JPMC - SG&A
+810,Sales

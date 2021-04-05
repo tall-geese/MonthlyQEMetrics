@@ -1,0 +1,28 @@
+SQL alchemy engines and connections
+
+The basic premise is to create an engine, asking the engine for a connection object
+and executing sql statments against that connection which return records
+
+---------------------------------
+from sqlalchemy import create_engine(), Connection, text
+
+engine = create_engine('url for database')
+con = engine.connect()
+con.execute('SELECT * from Users')
+
+	or...
+
+with engine.connect() as connection:
+	result = connection.execute(text("select username from users"))
+
+using it this way means that the connection.close() is automatically invoked at the end of the with block
+
+----------------------------------
+
+server / database name
+
+create_engine("mssql+pyodbc://@localhost/MD_Unipoint_TEST?trusted_connection=yes&driver=SQL+Server+Native+Client+11.0")
+
+
+pandas giving all NaN on join   (use merge or set_index)
+
