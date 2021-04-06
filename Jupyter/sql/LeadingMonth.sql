@@ -6,15 +6,15 @@ INNER JOIN
 		(SELECT	src.JobNum[JobNum], SUM(src.DiscrepQty)[DiscrepQty] 
 	FROM (SELECT ld.JobNum, ld.DiscrepQty
 			FROM EpicorLive10.dbo.LaborDtl ld 
-			WHERE ld.CreateDate > {before} and ld.Company = 'JPMC' and ld.DiscrepQty <> 0
+			WHERE ld.CreateDate > {start} and ld.Company = 'JPMC' and ld.DiscrepQty <> 0
 			UNION ALL
 			SELECT dh.JobNum, da.Quantity
 			FROM EpicorLive10.dbo.DMRActn da
 			LEFT OUTER JOIN EpicorLive10.dbo.DMRHead dh on da.DMRNum = dh.DMRNum 
-			WHERE da.ActionDate > {before} and (da.ActionType = 'R' OR da.DestinationType = 'M') and da.JobNum <> '' and da.Company = 'JPMC' and dh.JobNum <> '') src
+			WHERE da.ActionDate > {start} and (da.ActionType = 'R' OR da.DestinationType = 'M') and da.JobNum <> '' and da.Company = 'JPMC' and dh.JobNum <> '') src
 	GROUP BY src.JobNum) src2
 ON ld2.JobNum  = src2.JobNum
-WHERE ld2.CreateDate <= {before} AND ld2.DiscrepQty <> 0
+WHERE ld2.CreateDate <= {start} AND ld2.DiscrepQty <> 0
 ORDER BY ld2.JobNum ASC
 
 --Backup with hardcoded dates
